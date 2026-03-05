@@ -1,6 +1,10 @@
-#ifndef ANY_GAME_NAME.H
-#define ANY_GAME_NAME.H
+#ifndef ANY_GAME_NAME_H
+#define ANY_GAME_NAME_H
+
+#include <bn_sprite_ptr.h>
+
 #include "mj/mj_game.h"
+#include "aub/player.h"
 
 namespace any {
 
@@ -13,7 +17,7 @@ namespace any {
          * @param completed_games how many microgames the player has completed so far
          * @param data shared information, such as a rng and number of frames left in the microgame
          */
-        any_test_game(int completed_games, const mj::game_data& data);
+        any_game_name(int completed_games, const mj::game_data& data);
 
     
     /**
@@ -47,23 +51,23 @@ namespace any {
          */
     bool victory() const override;
 
-    /**
-         * Called repeatedly as the game fades into view. Unused for this particular microgame.
-         * 
-         * @param data shared information, such as a rng and number of frames left in the microgame
-         */
-        void fade_in(const mj::game_data& data) override;
+     /**
+      * Called repeatedly as the game fades into view. Unused for this particular microgame.
+      * 
+      * @param data shared information, such as a rng and number of frames left in the microgame
+      */
+     void fade_in(const mj::game_data& data) override;
 
-        /**
-         * Called repeatedly as the game fades into view. Unused for this particular microgame.
-         * 
-         * @param data shared information, such as a rng and number of frames left in the microgame
-         */
-        void fade_out(const mj::game_data& data) override;
+     /**
+      * Called repeatedly as the game fades into view. Unused for this particular microgame.
+      * 
+      * @param data shared information, such as a rng and number of frames left in the microgame
+      */
+     void fade_out(const mj::game_data& data) override;
 
     private:
         //the character that the player can move
-        player _player;
+     //    player _player;
 };
 
 }
