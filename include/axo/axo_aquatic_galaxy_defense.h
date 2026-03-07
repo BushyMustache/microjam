@@ -4,6 +4,7 @@
 #include <bn_sprite_ptr.h>
 
 #include "mj/mj_game.h"
+#include "axo/axo_player.h"
 
 namespace axo
 {
@@ -62,6 +63,9 @@ class axo_aquatic_galaxy_defense : public mj::game
          */
         void fade_out(const mj::game_data& data) override;
 
+        private:
+        // The character that the player can move
+        player _player;
 };
 
 }
