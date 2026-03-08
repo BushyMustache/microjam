@@ -13,9 +13,10 @@ namespace jas {
  * @param starting_position the location to start the player at
  * @param speed the pixels/frame the player moves at in each dimension
  */
-player::player(bn::fixed_point starting_position, bn::fixed speed) :
+player::player(bn::fixed_point starting_position, bn::fixed speed, bn::fixed gravity) :
     _sprite(bn::sprite_items::jas_dot.create_sprite(starting_position)),
-    _speed(speed)
+    _speed(speed),
+    _gravity(gravity)
     {}
 
 /**
@@ -34,6 +35,7 @@ void player::update() {
     if(bn::keypad::down_held()) {
         _sprite.set_y(_sprite.y() + _speed);
     }
+    _sprite.set_y(_sprite.y()-_gravity);
 }
 
 /**
