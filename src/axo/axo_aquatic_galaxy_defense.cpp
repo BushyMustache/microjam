@@ -82,7 +82,7 @@ mj::game_result axo_aquatic_galaxy_defense::play([[maybe_unused]] const mj::game
     }
 
     if(!_player.alive()) {
-        return mj::game_result(false, true);
+        return mj::game_result(true, true);
     }
 
     mj::game_result result(false, false);
