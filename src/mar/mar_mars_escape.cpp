@@ -3,10 +3,12 @@
 #include "bn_display.h"
 #include "bn_sprite_ptr.h"
 #include "bn_sprite_animate_actions.h"
+
 #include <bn_backdrop.h>
 #include <bn_random.h>
 #include <bn_vector.h>
 #include <bn_display.h>
+#include <bn_random.h>
 
 #include "mj/mj_game_list.h"
 
@@ -39,9 +41,19 @@ namespace mar
      * @param data shared information, such as a rng and number of frames left in the microgame
      */
     mar_mars_escape::mar_mars_escape([[maybe_unused]] int completed_games, [[maybe_unused]] const mj::game_data &data) : mj::game("mar"),
-                                                                                                                         _player(mar_player({20, 0}, 2))
-                                                                                                                         //,_enemy(mar_enemy({MAX_X, 0},1))
+                                _player(mar_player({20, 0}, 2))
     {
+
+        bn::random rng = bn::random();
+        for(int i = 0; i < 15;i++){
+            enemies.push_back(mar_enemy(
+                {bn::display::width()/2, 
+                rng.get_int(-bn::display::height()/2, bn::display::height()/2)
+            },
+            1)
+        );
+            rng.update();
+        }
     }
 
     /**
@@ -78,6 +90,10 @@ namespace mar
     {
         // update the player position
         _player.update();
+        
+        for(int i = 0; i < 15; i++){
+            enemies[i].update();
+        }
 
         
 

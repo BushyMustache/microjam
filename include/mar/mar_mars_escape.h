@@ -69,8 +69,8 @@ namespace mar
     private:
         // The character that the player can move
         mar_player _player;
-        
-        //mar_enemy _enemy;
+
+        bn::vector<mar_enemy, 15> enemies;
     };
 }
 #endif

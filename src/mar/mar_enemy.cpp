@@ -16,12 +16,16 @@ namespace mar{
                     starting_position
                 )
             ),
-            _speed(speed), _rect(bn::rect(starting_position.x().round_integer(), starting_position.y().round_integer(), 8, 8))
+            _speed(speed), 
+            _rect(bn::rect(
+                starting_position.x().round_integer(), 
+                starting_position.y().round_integer(), 8, 8)
+            )
     {
     }
 
     void mar_enemy::update()
     {
-        _sprite.set_y(_sprite.y() - _speed);
+        _sprite.set_x(_sprite.x() - _speed);
     }
 }

@@ -11,7 +11,7 @@ namespace mar
 {
 
     /**
-     * A character controlled with the d-pad.
+     * 
      */
     class mar_enemy
     {
@@ -25,8 +25,8 @@ namespace mar
         /**
          * enemy constructor
          *
-         * @param starting_position the location to start the player at
-         * @param speed the pixels/frame the player moves at in each dimension
+         * @param starting_position the location to start the enemy at
+         * @param speed the pixels/frame the enemy moves at in each dimension
          */
         mar_enemy(bn::fixed_point starting_position, bn::fixed speed);
 
@@ -34,9 +34,9 @@ namespace mar
         void update();
 
     private:
-        // The sprite to display the player
+        // The sprite to display the enemy
         bn::sprite_ptr _sprite;
-        // The pixels/frame the player moves in each dimension
+        // The pixels/frame the enemy moves in each dimension
         bn::fixed _speed;
 
         bn::rect _rect;

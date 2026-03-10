@@ -15,7 +15,11 @@ namespace mar
      * @param starting_position the location to start the mar_player at
      * @param speed the pixels/frame the mar_player moves at in each dimension
      */
-    mar_player::mar_player(bn::fixed_point starting_position, bn::fixed speed) : _sprite(bn::sprite_items::square.create_sprite(starting_position)), _speed(speed)
+    mar_player::mar_player(bn::fixed_point starting_position, bn::fixed speed) : _sprite(bn::sprite_items::square.create_sprite(starting_position)), _speed(speed), 
+            _rect(bn::rect(
+                starting_position.x().round_integer(), 
+                starting_position.y().round_integer(), 8, 8)
+            )
     {}
 
     /**
