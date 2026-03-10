@@ -60,7 +60,12 @@ namespace aaa
 
         for (aaa_enemy &enemy : enemies)
         {
+
             enemy.update();
+            if (enemy.getRect().intersects(_player.getRect()))
+            {
+                enemies.erase(enemies.begin());
+            }
         }
 
         for (int i = bullets.size() - 1; i >= 0; --i)
