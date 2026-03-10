@@ -21,7 +21,7 @@ kgg_game_name::kgg_game_name(int completed_games, const mj::game_data& data)
 
 bn::string<16> kgg_game_name::title() const
 {
-    return "KGG Game";
+    return "Press the arrow keys left and right to move around";
 }
 
 int kgg_game_name::total_frames() const
