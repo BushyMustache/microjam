@@ -44,7 +44,7 @@ axo_aquatic_galaxy_defense::axo_aquatic_galaxy_defense([[maybe_unused]] int comp
         PLAYER_SIZE)),
         _obstacles()
         {
-            //spawn 3 obstacles, top of screen with varying x values
+            //spawn 10 obstacles, top of screen with varying x values
             for(int i = 0; i < 10; i++) {
                 _obstacles.push_back(obstacle(-bn::display::width() / 2 + 20 + (i * 30), 
                 -bn::display::height(), 1, OBSTACLE_SIZE));

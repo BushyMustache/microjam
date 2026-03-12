@@ -20,10 +20,12 @@ class bubble {
 
     public:
         /**
-         * player constructor
+         * bubble constructor
          * 
-         * @param starting_position the location to start the obstacle at
-         * @param speed the pixels/frame the obstacle moves at in each dimension
+         * @param starting_x the x coordinate to start the bubble at
+         * @param starting_y the y coordinate to start the bubble at
+         * @param bubble_speed the pixels/frame the bubble moves at in each dimension
+         * @param bubble_size the size of the bubble
          */
         bubble(bn::fixed starting_x, bn::fixed starting_y, bn::fixed bubble_speed, bn::size bubble_size);
 

@@ -41,8 +41,10 @@ void player::update() {
     }
 
     if(bn::keypad::a_pressed() || bn::keypad::b_pressed()) {
-        bubbles.push_back(bubble(_sprite.x(), _sprite.y(), BUBBLE_SPEED, BUBBLE_SIZE
-        ));
+        if(bubbles.size() < bubbles.max_size()) {
+            bubbles.push_back(bubble(_sprite.x(), _sprite.y(), BUBBLE_SPEED, 
+            BUBBLE_SIZE));
+        }
     }
 
     for(int i = 0; i < bubbles.size(); ) {
