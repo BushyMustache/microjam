@@ -59,7 +59,7 @@ namespace jas
         {
             return .04;
         }
-        return .06;
+        return .05;
     }
     /**
      * How long the timer for the game should be set to in frames.
