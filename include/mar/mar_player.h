@@ -29,7 +29,9 @@ namespace mar
         /**
          * returns
          */
-        bn::rect &rect() { return _rect; }
+        bn::rect &rect() { 
+            return _rect; 
+        }
 
         /**
          * Reads from the d-pad and moves the player by one frame accordingly.

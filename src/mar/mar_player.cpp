@@ -27,9 +27,15 @@ namespace mar
      */
     void mar_player::update()
     {
+        // If up is held moves up. If down is held moves down. Otherwise, moves down at a slower speed to simulate gravity.
         if (bn::keypad::up_held() && _sprite.y() > MIN_Y)
         {
             _sprite.set_y(_sprite.y() - _speed);
+        }
+
+        else if (_sprite.y() < MAX_Y)
+        {
+            _sprite.set_y(_sprite.y() + _speed / 1.5);
         }
         if (bn::keypad::down_held() && _sprite.y() < MAX_Y)
         {
