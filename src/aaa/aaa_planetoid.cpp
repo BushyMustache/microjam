@@ -6,6 +6,7 @@
 #include "mj/mj_game_data.h"
 #include "bn_display.h"
 #include "bn_sprite_items_aaa_heart.h"
+#include "bn_regular_bg_items_aaa_bg.h"
 #include <bn_core.h>
 
 namespace
@@ -27,7 +28,8 @@ namespace aaa
 {
 
     aaa_planetoids::aaa_planetoids([[maybe_unused]] int completed_games, [[maybe_unused]] const mj::game_data &data) : mj::game("aaa"),
-                                                                                                                       _player(bn::fixed_point(0, 0))
+                                                                                                                       _player(bn::fixed_point(0, 0)),
+                                                                                                                       _background(bn::regular_bg_items::aaa_bg.create_bg())
     {
         _asteroids = _recommended_enemy_kill(recommended_difficulty_level(completed_games, data));
         _hp = 3;
