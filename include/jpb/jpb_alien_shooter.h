@@ -11,7 +11,7 @@
 
 namespace jpb {
 
-  static constexpr int MAX_Y = bn::display::height() / 2;
+  static constexpr int MIN_Y = -bn::display::height() / 2;
 
   class jpb_alien_shooter : public mj::game {
     public: 

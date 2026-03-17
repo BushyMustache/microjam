@@ -66,11 +66,13 @@ namespace jpb {
         _text_generator.generate(80, -70, bn::to_string<4> (_player.get_missile_count()), _ammo_sprites);
 
         _player.shoot(_missiles);
-        for (jpb_missile& missile : _missiles) {
-            missile.update();
-
-            if (missile._sprite.y() == MAX_Y) {
-                _trashbin.push_back(missile);
+        
+        for (auto it = _missiles.begin(); it < _missiles.end();) {
+            it->update();
+            if (it->_sprite.y() <= MIN_Y) {
+                it = _missiles.erase(it);
+            } else {
+                it++;
             }
         }
 
@@ -95,4 +97,5 @@ namespace jpb {
     void jpb_alien_shooter::fade_out([[maybe_unused]] const mj::game_data& data) {
 
     }
+    
 }
