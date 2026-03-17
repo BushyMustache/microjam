@@ -7,6 +7,7 @@
 #include "bn_sprite_items_jpb_ship.h"
 
 namespace jpb {
+<<<<<<< HEAD
     
     bn::rect create_bounding_box(bn::sprite_ptr& sprite, bn::size& box_size) {
         return bn::rect(sprite.x().round_integer(),
@@ -14,6 +15,13 @@ namespace jpb {
                         box_size.width(),
                         box_size.height());
     }
+=======
+    jpb_player::jpb_player(bn::fixed_point starting_position, bn::fixed_point enemy_position, bn::fixed speed) :
+        _player_sprite(bn::sprite_items::jpb_ship.create_sprite(starting_position)),
+        _enemy_sprite(bn::sprite_items::jpb_ship.create_sprite(enemy_position)),
+        _speed(speed)
+    {}
+>>>>>>> main
 
     jpb_player::jpb_player(bn::fixed_point starting_position, bn::fixed speed, bn::size size) :
         _player_sprite(bn::sprite_items::jpb_ship.create_sprite(starting_position)),
