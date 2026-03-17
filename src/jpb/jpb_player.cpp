@@ -68,6 +68,7 @@ namespace jpb {
                 _missiles.push_back(jpb_missile({_player_sprite.x(), _player_sprite.y()}, 3, {4, 4}));
                 _missile_count -= 1;
             }
+            // bn::sound_items::laser_shooting_sfx.play();
         }
     }
 }
