@@ -9,7 +9,7 @@ namespace jpb {
         _size(size),
         _bounding_box(bn::rect(_sprite.x().round_integer(), _sprite.y().round_integer(), size.width(), size.height()))
     {}
-
+    
     void jpb_missile::update() {
         _bounding_box = bn::rect(_sprite.x().round_integer(), _sprite.y().round_integer(), _size.width(), _size.height());
         

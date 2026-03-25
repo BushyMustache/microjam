@@ -19,7 +19,7 @@ class jpb_enemy {
         bn::fixed _enemy_speed;
         bn::size _enemy_size;
         bn::rect _enemy_box;
-
+        
         private:
             bool _moving_right = true;
 };

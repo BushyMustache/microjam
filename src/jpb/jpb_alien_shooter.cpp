@@ -5,7 +5,7 @@
 
 #include "bn_sound_items.h"
 
-
+// Credentials for our game
 namespace
 {
     constexpr bn::string_view code_credits[] = { "Johncarlo", "John Baltazar" };
@@ -14,6 +14,7 @@ namespace
     constexpr bn::string_view music_credits[] = {"MintoDog"};
 }
 
+// credits 
 MJ_GAME_LIST_ADD(jpb::jpb_alien_shooter) 
 MJ_GAME_LIST_ADD_CODE_CREDITS(code_credits)
 MJ_GAME_LIST_ADD_GRAPHICS_CREDITS(graphics_credits)
@@ -21,10 +22,11 @@ MJ_GAME_LIST_ADD_MUSIC_CREDITS(music_credits)
 MJ_GAME_LIST_ADD_SFX_CREDITS(sfx_credits)
 
 
+// the game 
 namespace jpb {
     static constexpr bn::size PLAYER_SIZE = {16, 8};
     static constexpr bn::size ENEMY_SIZE = {8, 8};
-
+    // constructor (setup)
     jpb_alien_shooter::jpb_alien_shooter([[maybe_unused]] int completed_games, [[maybe_unused]] const mj::game_data& data) :
         mj::game("jpb"),
         _player(jpb_player({0, 30}, _recommended_player_speed(recommended_difficulty_level(completed_games, data)), 
@@ -58,7 +60,7 @@ namespace jpb {
         } 
         return 3;
     }
-
+    // length of game (5 seconds)
     int jpb_alien_shooter::total_frames() const {
         return 300;
     }
@@ -70,7 +72,7 @@ namespace jpb {
         _text_generator.generate(80, -70, bn::to_string<4> (_player.get_missile_count()), _ammo_sprites);
 
         _player.shoot(_missiles);
-        
+        // removing missiles properly
         for (auto it = _missiles.begin(); it < _missiles.end();) {
             it->update();
             if (it->_sprite.y() <= MIN_Y) {
@@ -87,11 +89,11 @@ namespace jpb {
     bool jpb_alien_shooter::victory() const {
         return _enemy.enemy_shot(_missiles);
     }
-
+    
     void jpb_alien_shooter::fade_in([[maybe_unused]] const mj::game_data& data) {
 
     }
-
+    
     void jpb_alien_shooter::fade_out([[maybe_unused]] const mj::game_data& data) {
 
     }

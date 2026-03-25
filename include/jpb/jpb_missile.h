@@ -16,7 +16,6 @@ namespace jpb {
             void update();
 
             // Properties
-
             bn::sprite_ptr _sprite; 
             bn::fixed _speed; 
             bn::size _size;

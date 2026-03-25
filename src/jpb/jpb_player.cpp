@@ -24,7 +24,7 @@ namespace jpb {
         _player_box(create_bounding_box(_player_sprite, size)),
         _missile_count(10)
     {}
-    
+    // sepreated functions for orgnazation
     void jpb_player::update() {
         _update_position();
         _update_animation();
@@ -37,7 +37,7 @@ namespace jpb {
         if(bn::keypad::right_held()) {
             _player_sprite.set_x(_player_sprite.x() + _speed);
         }
-
+        // user prevents leaving screen
         if (_player_sprite.x() < MIN_X + 8) {
             _player_sprite.set_x(MIN_X + 8);
         }
@@ -47,7 +47,7 @@ namespace jpb {
 
         _player_box = create_bounding_box(_player_sprite, _player_size);
     }
-
+    // goes through sprite images
     void jpb_player::_update_animation() {
         if(bn::keypad::left_pressed()) {
             _sprite_action = bn::create_sprite_animate_action_forever(_player_sprite, 8, bn::sprite_items::jpb_ship.tiles_item(), 0, 1, 2);

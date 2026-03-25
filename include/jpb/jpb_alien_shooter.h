@@ -12,7 +12,7 @@
 namespace jpb {
 
   static constexpr int MIN_Y = -bn::display::height() / 2;
-
+// the game inside of the micro jam game
   class jpb_alien_shooter : public mj::game {
     public: 
       jpb_alien_shooter (int completed_games, const mj::game_data& data);
@@ -28,7 +28,7 @@ namespace jpb {
       void fade_in(const mj::game_data& data) override;
 
       void fade_out(const mj::game_data& data) override;
-
+    // only accessable inside the class
       private:
         jpb_player _player;
         jpb_enemy _enemy;
